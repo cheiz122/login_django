@@ -1,0 +1,13 @@
+<h1>register a new record</h1>
+<form method="POST" action="{% url 'add_record'%}">
+    {%  for message in messages    %}
+           {{message}}
+           {%endfor%}
+          {%csrf_token%}
+
+           {{   form.as_p   }}
+
+<br>
+<button type="submit">submit</button>
+
+</form>

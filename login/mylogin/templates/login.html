@@ -1,0 +1,20 @@
+<style>
+form{
+    text-align: center;
+    background-color: aqua;
+    
+}
+
+</style>
+<a href="{% url 'register'%}">register here</a>
+
+<form  method="POST" action="{%url 'home'%}">
+    {%  csrf_token  %}
+
+<p>username  <input type="text" placeholder="username" name="username"></p> <br>
+<p>passwoed  <input type="password" placeholder="password" name="password"></p> <br>
+<button type="submit">submit</button>
+
+
+
+</form>

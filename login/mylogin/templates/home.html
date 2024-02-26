@@ -1,0 +1,35 @@
+
+{% if user.is_authenticated %}
+{%if messages%}
+    {%for message in messages%}
+       "{{message}}"
+    {%endfor%}
+ {%endif%}   
+
+<h1>users registered are:</h1>
+<a href="{%  url 'add_record'        %}">add a new record</a>
+<table>
+<thead>
+
+    <tr>
+        <th>FIRSTNAME</th> 
+        <th>LASTNAME</th>
+        <th>ID</th>
+    </tr>
+</thead>
+  <tbody>
+{%for x in users%}
+<tr>
+     <td>{{x.first_name}}</td>
+     <td>{{x.last_name}}</td>
+     <td>{{x.id}}</td>
+  
+
+</tr>
+  </tbody>
+</table>
+
+
+
+{% endfor %}
+{% endif %}

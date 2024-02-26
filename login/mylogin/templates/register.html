@@ -1,0 +1,27 @@
+<style>
+    form{
+        
+        background-color: greenyellow;
+    }
+</style>
+
+
+<form method="POST" >
+{%csrf_token%}
+{%if form.errors%}
+        <div>
+          your form has errors
+          {%for field in form%}
+             {% if field.errors%}
+               {{field.errors}}
+             {%endif%}
+           {%endfor%}  
+       {%endif%}    
+
+        </div>
+{{form.as_p}}
+
+<br>
+<button type="submit">submit</button>
+
+</form>
